@@ -23,6 +23,9 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+
+	'ga property': process.env.GA_PROPERTY,
+	'ga domain': process.env.GA_DOMAIN,
 });
 
 // Load your project's Models
@@ -36,6 +39,8 @@ keystone.set('locals', {
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable,
+	ga_property: keystone.get('ga property'),
+	ga_domain: keystone.get('ga domain'),
 });
 
 // Load your project's Routes
